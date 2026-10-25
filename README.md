@@ -1,120 +1,136 @@
-🔐 MITM Attack Simulation Using ARP Spoofing — Kali Linux
+```html
+<h1 align="center">🔐 MITM Attack Simulation Using ARP Spoofing</h1>
 
-📌 Description du projet
+<p align="center">
+  <strong>Kali Linux | Ettercap | Bettercap | Oracle VirtualBox</strong>
+</p>
 
-Ce projet consiste à étudier et simuler une attaque Man-in-the-Middle (MITM) basée sur la technique d'ARP Spoofing (ARP Poisoning) dans un environnement réseau contrôlé, à l'aide de Kali Linux, Ettercap et Bettercap.
+<hr>
 
-L'objectif est de comprendre les vulnérabilités du protocole ARP (Address Resolution Protocol), d'observer le comportement des équipements d'un réseau local et d'analyser les risques liés à l'interception des communications.
+<h2>📌 Description du projet</h2>
 
-Cette simulation s'inscrit dans une démarche pédagogique de cybersécurité et de sécurité des réseaux informatiques.
+<p>
+  Ce projet consiste à simuler une attaque
+  <strong>Man-in-the-Middle (MITM)</strong> basée sur
+  l'<strong>ARP Spoofing</strong> dans un environnement réseau contrôlé,
+  en utilisant Kali Linux, Ettercap et Bettercap.
+</p>
 
-🎯 Objectifs du projet
+<p>
+  L'objectif est de comprendre les vulnérabilités du protocole ARP,
+  d'étudier les risques d'interception des communications réseau
+  et d'explorer les mécanismes de protection contre ces attaques.
+</p>
 
-Comprendre le fonctionnement du protocole ARP.
+<h2>🎯 Objectifs</h2>
 
-Étudier le principe d'une attaque Man-in-the-Middle (MITM).
+<ul>
+  <li>Comprendre le fonctionnement du protocole ARP.</li>
+  <li>Étudier le principe d'une attaque MITM.</li>
+  <li>Découvrir les techniques d'ARP Spoofing.</li>
+  <li>Identifier les équipements connectés au réseau local.</li>
+  <li>Utiliser Ettercap et Bettercap pour l'analyse réseau.</li>
+  <li>Observer les communications et les paquets réseau.</li>
+  <li>Étudier les mécanismes de détection et de prévention.</li>
+</ul>
 
-Découvrir les techniques d'ARP Spoofing.
+<h2>🛠️ Outils et technologies utilisés</h2>
 
-Identifier les équipements connectés à un réseau local.
+<table>
+  <tr>
+    <th>Outil</th>
+    <th>Utilisation</th>
+  </tr>
+  <tr>
+    <td>Kali Linux</td>
+    <td>Système d'exploitation dédié aux tests de sécurité.</td>
+  </tr>
+  <tr>
+    <td>Ettercap</td>
+    <td>Découverte des hôtes et analyse des communications réseau.</td>
+  </tr>
+  <tr>
+    <td>Bettercap</td>
+    <td>Reconnaissance réseau, étude de l'ARP Spoofing et capture de trafic.</td>
+  </tr>
+  <tr>
+    <td>Oracle VirtualBox</td>
+    <td>Virtualisation de la machine Kali Linux.</td>
+  </tr>
+  <tr>
+    <td>ARP</td>
+    <td>Résolution des adresses IPv4 en adresses MAC.</td>
+  </tr>
+  <tr>
+    <td>TCP/IP</td>
+    <td>Communication entre les équipements réseau.</td>
+  </tr>
+  <tr>
+    <td>mDNS</td>
+    <td>Protocole de découverte et de résolution de noms locaux.</td>
+  </tr>
+</table>
 
-Expérimenter les fonctionnalités d'Ettercap et de Bettercap.
+<h2>🖥️ Environnement de simulation</h2>
 
-Observer et analyser les communications réseau.
+<table>
+  <tr>
+    <th>Équipement</th>
+    <th>Adresse IP</th>
+  </tr>
+  <tr>
+    <td>Machine Kali Linux</td>
+    <td>192.168.100.13</td>
+  </tr>
+  <tr>
+    <td>Passerelle réseau</td>
+    <td>192.168.100.1</td>
+  </tr>
+  <tr>
+    <td>Réseau local</td>
+    <td>192.168.100.0/24</td>
+  </tr>
+  <tr>
+    <td>Hôte découvert 1</td>
+    <td>192.168.100.4</td>
+  </tr>
+  <tr>
+    <td>Hôte découvert 2</td>
+    <td>192.168.100.5</td>
+  </tr>
+  <tr>
+    <td>Hôte découvert 3</td>
+    <td>192.168.100.8</td>
+  </tr>
+</table>
 
-Identifier les mécanismes de protection contre l'ARP Spoofing.
+<h2>🧠 Principe de l'attaque MITM</h2>
 
-Comprendre les méthodes de détection et de prévention des attaques MITM.
+<p>
+  Une attaque Man-in-the-Middle consiste à interposer une machine
+  entre deux équipements qui communiquent.
+</p>
 
-🛠️ Outils et technologies utilisés
+<p>
+  Dans le cas de l'ARP Spoofing, de fausses informations ARP
+  peuvent provoquer une association incorrecte entre
+  une adresse IP et une adresse MAC.
+</p>
 
-Outil / Technologie
+<p>
+  Cette manipulation peut permettre la redirection du trafic
+  réseau vers une machine intermédiaire.
+</p>
 
-Description
+<h3>Communication normale</h3>
 
-Kali Linux
+<pre>
+[Client] ---------> [Routeur] ---------> [Internet]
+</pre>
 
-Distribution Linux spécialisée dans les tests de sécurité et l'analyse réseau.
+<h3>Scénario MITM</h3>
 
-Ettercap
-
-Outil d'analyse réseau et de simulation d'attaques Man-in-the-Middle.
-
-Bettercap
-
-Framework de sécurité réseau permettant la découverte des hôtes, l'analyse du trafic et les tests ARP.
-
-Oracle VirtualBox
-
-Logiciel de virtualisation utilisé pour exécuter Kali Linux.
-
-ARP
-
-Protocole permettant d'associer une adresse IPv4 à une adresse MAC sur un réseau local.
-
-TCP/IP
-
-Ensemble de protocoles assurant la communication entre les équipements du réseau.
-
-mDNS
-
-Protocole de résolution de noms sur un réseau local, observé durant la capture.
-
-🖥️ Environnement de simulation
-
-La simulation a été réalisée à partir d'une machine virtuelle Kali Linux exécutée sous Oracle VirtualBox.
-
-Configuration réseau observée
-
-Élément
-
-Adresse IP
-
-Machine Kali Linux
-
-192.168.100.13
-
-Passerelle réseau
-
-192.168.100.1
-
-Réseau local
-
-192.168.100.0/24
-
-Hôte découvert
-
-192.168.100.4
-
-Hôte découvert
-
-192.168.100.5
-
-Hôte découvert
-
-192.168.100.8
-
-Les adresses correspondent à l'environnement de simulation présenté dans les captures d'écran.
-
-🧠 Principe de l'attaque MITM
-
-Une attaque Man-in-the-Middle consiste à placer un équipement intermédiaire entre deux systèmes qui communiquent.
-
-Dans le cas de l'ARP Spoofing, l'attaquant cherche à envoyer de fausses informations ARP afin d'associer son adresse MAC à l'adresse IP d'un autre équipement, généralement la passerelle réseau.
-
-Si cette manipulation réussit, une partie du trafic peut être redirigée vers la machine intermédiaire.
-
-Schéma conceptuel
-
-Communication normale :
-
-[Client] ────────── [Routeur]
-                         |
-                     [Internet]
-
-
-Scénario MITM :
-
+<pre>
 [Client]
     |
     v
@@ -125,115 +141,109 @@ Scénario MITM :
     |
     v
 [Internet]
+</pre>
 
-Le succès de cette technique dépend notamment de la configuration du réseau et des mécanismes de protection actifs.
+<h2>🔬 Étapes de la simulation</h2>
 
-🔬 Déroulement de la simulation
+<h3>1. Préparation de l'environnement</h3>
+<p>
+  Installation et configuration de Kali Linux dans Oracle VirtualBox,
+  puis vérification de la connectivité réseau.
+</p>
 
-1. Préparation de l'environnement
+<h3>2. Découverte des équipements</h3>
+<p>
+  Utilisation de Bettercap et Ettercap pour identifier les équipements
+  présents sur le réseau local ainsi que leurs adresses IP et MAC.
+</p>
 
-Installation et démarrage de Kali Linux dans Oracle VirtualBox.
+<h3>3. Étude de l'ARP Spoofing</h3>
+<p>
+  Exploration du module arp.spoof de Bettercap et de ses paramètres,
+  notamment le fonctionnement du mode full-duplex.
+</p>
 
-Vérification de la connectivité réseau et identification de l'adresse IP de la machine virtuelle.
+<h3>4. Simulation MITM</h3>
+<p>
+  Démarrage du module ARP Spoofing dans l'environnement de test.
+  Bettercap a signalé le lancement du module ainsi qu'un avertissement
+  concernant les protections ARP du routeur.
+</p>
 
-2. Découverte des équipements réseau
+<h3>5. Observation du trafic</h3>
+<p>
+  Utilisation de net.sniff pour observer les paquets réseau visibles
+  depuis la machine Kali Linux, notamment des requêtes mDNS.
+</p>
 
-Utilisation des fonctionnalités de reconnaissance réseau de Bettercap et d'Ettercap pour identifier les équipements présents sur le sous-réseau.
+<h3>6. Analyse avec Ettercap</h3>
+<p>
+  Exploration de l'interface graphique d'Ettercap et consultation
+  de la liste des hôtes découverts.
+</p>
 
-Les opérations de découverte ont permis d'observer plusieurs adresses IP et MAC.
+<h2>📊 Résultats et observations</h2>
 
-3. Étude de l'ARP Spoofing
+<ul>
+  <li>Découverte de plusieurs équipements du réseau local.</li>
+  <li>Identification des adresses IP et MAC.</li>
+  <li>Exploration des fonctionnalités ARP Spoofing.</li>
+  <li>Démarrage du module arp.spoof dans Bettercap.</li>
+  <li>Observation d'un avertissement relatif aux protections ARP.</li>
+  <li>Détection de requêtes mDNS dans les journaux.</li>
+  <li>Visualisation des équipements dans Ettercap.</li>
+</ul>
 
-Exploration du module arp.spoof de Bettercap afin de comprendre son fonctionnement et ses paramètres.
+<p>
+  <strong>Remarque :</strong>
+  Les captures disponibles ne suffisent pas à confirmer
+  la réussite d'une interception MITM complète.
+</p>
 
-Les tests ont notamment porté sur le mode full-duplex, qui concerne les échanges entre la cible et la passerelle.
+<h2>🛡️ Mesures de protection</h2>
 
-4. Simulation de l'attaque MITM
+<ul>
+  <li>Dynamic ARP Inspection (DAI).</li>
+  <li>DHCP Snooping.</li>
+  <li>Surveillance des changements d'associations IP/MAC.</li>
+  <li>Utilisation de HTTPS et TLS.</li>
+  <li>Segmentation du réseau local.</li>
+  <li>Activation des protections ARP du routeur.</li>
+</ul>
 
-Démarrage du module d'ARP Spoofing dans l'environnement de test.
+<h2>📚 Compétences développées</h2>
 
-Bettercap a confirmé le démarrage du module, tout en affichant un avertissement relatif aux mécanismes de protection ARP du routeur.
+<ul>
+  <li>Cybersécurité et sécurité des réseaux.</li>
+  <li>Compréhension des protocoles ARP et TCP/IP.</li>
+  <li>Administration de Kali Linux.</li>
+  <li>Virtualisation avec Oracle VirtualBox.</li>
+  <li>Reconnaissance et analyse réseau.</li>
+  <li>Étude des attaques MITM.</li>
+  <li>Analyse des mécanismes de défense.</li>
+</ul>
 
-Cette indication ne constitue pas une preuve que l'interception du trafic a réussi.
 
-5. Observation du trafic réseau
+<h2>📌 Conclusion</h2>
 
-Utilisation du module net.sniff de Bettercap pour observer les paquets visibles depuis la machine Kali Linux.
+<p>
+  Ce projet a permis d'explorer les principes des attaques
+  Man-in-the-Middle et de l'ARP Spoofing en utilisant
+  Kali Linux, Ettercap et Bettercap.
+</p>
 
-Les journaux ont notamment montré des requêtes mDNS.
+<p>
+  Il met en évidence l'importance des mécanismes de protection
+  du réseau local et constitue une introduction pratique
+  à l'analyse des vulnérabilités réseau.
+</p>
 
-Ces observations permettent d'étudier certains échanges locaux, mais ne démontrent pas à elles seules l'interception des communications d'un autre appareil.
+<hr>
 
-6. Analyse avec Ettercap
-
-Utilisation de l'interface graphique d'Ettercap pour explorer les équipements détectés et examiner leurs adresses IP et MAC.
-
-Cette étape permet de compléter les observations effectuées avec Bettercap.
-
-📊 Résultats et observations
-
-Les captures d'écran de la simulation montrent les résultats suivants :
-
-Détection de plusieurs équipements sur le réseau local.
-
-Identification de certaines adresses MAC et de leurs fabricants.
-
-Exploration des fonctionnalités ARP Spoofing de Bettercap.
-
-Démarrage du module arp.spoof.
-
-Affichage d'un avertissement concernant les protections ARP.
-
-Observation de requêtes mDNS.
-
-Affichage de la liste des hôtes détectés dans Ettercap.
-
-Limite de l'expérience : les captures disponibles ne permettent pas de confirmer qu'une attaque MITM complète a réussi ou que le trafic d'une cible a effectivement été intercepté.
-
-🛡️ Mesures de protection
-
-Plusieurs mécanismes peuvent contribuer à limiter les attaques ARP Spoofing :
-
-Dynamic ARP Inspection (DAI) : vérification des messages ARP sur les équipements réseau compatibles.
-
-DHCP Snooping : contrôle des informations d'attribution des adresses IP.
-
-Surveillance ARP : détection des changements suspects d'association IP/MAC.
-
-HTTPS et TLS : protection de la confidentialité et de l'intégrité des communications applicatives.
-
-Segmentation réseau : limitation des communications directes entre équipements.
-
-Sécurisation du routeur : activation des protections réseau disponibles.
-
-📚 Compétences développées
-
-Ce projet permet de renforcer plusieurs compétences techniques :
-
-Sécurité des réseaux informatiques.
-
-Analyse des protocoles TCP/IP et ARP.
-
-Administration de Kali Linux.
-
-Virtualisation avec Oracle VirtualBox.
-
-Découverte et reconnaissance réseau.
-
-Analyse du trafic réseau.
-
-Compréhension des attaques MITM.
-
-Étude des mécanismes de protection contre l'ARP Spoofing.
-
-📌 Conclusion
-
-Cette simulation a permis d'explorer les mécanismes de l'ARP Spoofing et le principe des attaques Man-in-the-Middle à travers les outils Ettercap et Bettercap sous Kali Linux.
-
-L'expérience met en évidence l'importance de la surveillance du réseau local et des mécanismes de protection ARP.
-
-Elle constitue une introduction pratique à l'analyse des vulnérabilités réseau et aux techniques de défense utilisées en cybersécurité.
-
-Technologies : Kali Linux · Ettercap · Bettercap · VirtualBox · ARP · TCP/IP · Network Security
-
-Domaine : Cybersécurité / Sécurité des réseaux / Ethical Hacking
+<p align="center">
+  <strong>
+    Kali Linux • Ettercap • Bettercap • VirtualBox •
+    ARP Spoofing • MITM • Network Security
+  </strong>
+</p>
+```
