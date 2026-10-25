@@ -1,0 +1,2 @@
+# Simulation-d-une-attaque-Man-in-the-Middle-MITM-par-ARP-Spoofing-avec-Ettercap-et-Kali-Linux
+Simulation d'une attaque Man-in-the-Middle (MITM) basée sur l'ARP Spoofing dans un environnement réseau contrôlé, à l'aide de Kali Linux, Ettercap et Bettercap. Ce projet vise à comprendre les vulnérabilités du protocole ARP, à analyser le trafic réseau et à étudier les mécanismes de détection et de protection contre ce type d'attaque.
